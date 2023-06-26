@@ -21,4 +21,4 @@ This is for brand new analysts to AWS. This will provide a basic overview of wha
 - Create a security group that allows access to the public server
 - Create a security group that allows access to the bastion host
 
-[CloudFormation Template](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://aws-security-labs.s3.amazonaws.com/https://aws-security-labs.s3.amazonaws.com/ec2-template.yml&stackName=starter-pack-00)
+[CloudFormation Template](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURLhttps://aws-security-labs.s3.amazonaws.com/ec2-template.yml&stackName=starter-pack-00)
