@@ -4,6 +4,10 @@ Resources:
     Type: AWS::EC2::VPC
     Properties:
       CidrBlock: 10.0.0.0/16
+      Tags: 
+        - Key: Name
+          Value: Week-00 VPC
+      
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
@@ -20,6 +24,9 @@ Resources:
       VpcId: !Ref VPC
       CidrBlock: 10.0.0.0/24
       MapPublicIpOnLaunch: true
+      Tags: 
+        - Key: Name
+          Value: Week-00 Public Subnet
 
   PrivateSubnet:
     Type: AWS::EC2::Subnet
