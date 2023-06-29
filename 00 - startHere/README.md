@@ -18,16 +18,10 @@ This is for brand new analysts to AWS. This will provide a basic overview of wha
         - Add the ec2 instance to the private subnet provided
         - Add the `bastion host sg` to the ec2 instance that we created earlier
 
-- Create a VPC named "Maya's VPC"
-    - Create a public subnet called "Maya's public subnet" 
-        - create a web server named "Maya's web server" 
-    - Create a private subnet called  "Maya's private subnet" 
-        - create an ec2 instance in this subnet called "Maya's Bastion Host" 
-
 
 ## Pre-Reqs
-- Create a public key to authenticate to the ec2 instances
-- Create a security group that allows access to the public server
-- Create a security group that allows access to the bastion host
+- Create a public key to authenticate to the ec2 instances - name the key `mayas-keypair`. Save the keypair. 
+- Create a security group that allows access to the public server. Name the security group: `web server sg`
+- Create a security group that allows access to the bastion host. Name the security group: `bastion host sg`
 
 [CloudFormation Template](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://aws-security-labs.s3.amazonaws.com/ec2-template.yml&stackName=starter-pack-00)
