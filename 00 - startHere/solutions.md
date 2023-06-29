@@ -1,37 +1,62 @@
 ## Challenge 1
-- Create an ec2 Instance using the supplied VPC 
-    - Create 1 Ubuntu Linux Instance in the public subnet
-        - Name the server `Maya's Web Server`
-        - Use the `mayas-keypair` that you created earlier
-        - Add the ec2 instance to the public subnet provided
-        - Add the `web server sg` to the ec2 instance that we created earlier
-        - SSH into the ec2 instance via powershell or unix cli
-        - Run the commands listed below
-        - Clone the following code: https://github.com/Raritan-Travel/aws_security_labs.git
+#### Create a keypair
+- name it `web-server-key-pair`
+- keypair type = RSA
+- key file format = .pem
 
-    - Create 1 Red Hat Linux Instance in the private subnet
-        - Name the server `Maya's Bastion Host`
-        - Use the `mayas-keypair` that you created earlier
-        - Add the ec2 instance to the private subnet provided
-        - Add the `bastion host sg` to the ec2 instance that we created earlier
+#### create a security group for the bastion host: 
+- vpc  =  week 00 vpc 
+- name = `bastion host sg` 
+- create an inbound rule 
+  - type = ssh
+  - source = my ip 
+
+#### create a security group for the webserver 
+- vpc = week 00 vpc
+- name = `webserver sg` 
+- create an inbound rule(s)
+  - type = ssh
+  - source = my ip 
+
+  - type = http
+  - source = everywhere
+
+  - type = https
+  - source = everywhere
+
+#### create the webserver ec2 instance 
+- name = public webserver
+- os = ubuntu 
+- keypair = webserverkeypair
+- network settings 
+  - vpc = week 00 vpc
+  - subnet = public subnet
+  - security group = webserver sg 
+  - click launch instance 
+
+#### log into the webserver 
+
+- open powershell terminal, change into the directory where you downloaded the keypair
+- copy the ssh command in the ec2 connect information and hit enter
+- type in yes
+- run the commands located below 
+
+
+
      
     ### Commands
     ```## web server script
 
-    ## installs web server
-    > sudo apt install apache2 -y 
-    
-    ## clones repo for web server
-    > git clone https://github.com/Raritan-Travel/aws_security_labs.git
-    > git checkout "startHere"
-    
-    ## moves into the home directory
-    > cd $HOME
-    > cd aws_security_labs/00 - startHere/webServerFiles
-    
-    ## copies files into the http directory
-    > sudo cp webServerFiles/* /var/www/html
-    
-    ## start webserver and enables auto-restart
-    > sudo systemctl start apache2 
-    > sudo systemctl enable apache2```
+        ## installs web server 
+        sudo apt install apache2 -y
+        sudo systemctl start apache2  
+
+        ## clones repo for web server
+        git clone https://github.com/Raritan-Travel/aws_security_labs.git
+        cd aws_security_labs && git checkout "startHere"
+        
+        ## verify that the webserver is running by visiting the public ip 
+        
+        ## copies files into the http directory
+        cd '/home/ubuntu/aws_security_labs/00 - startHere'
+        sudo cp webServerFiles/* /var/www/html```
