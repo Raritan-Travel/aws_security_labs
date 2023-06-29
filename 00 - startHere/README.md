@@ -2,7 +2,7 @@ This is for brand new analysts to AWS. This will provide a basic overview of wha
 
 # Starter Challenges
 ## Challenge One 
-**Create a public webserver that serves content to the public. Also, you will need to create a Bastion Host server to administer the web server.**
+**Create a webserver that serves content to the public. Also, you will need to create a Bastion Host server to administer the web server.**
 
 ## Pre-Reqs
 - Create a public key to authenticate to the ec2 instances - name the key `mayas-keypair`. Save the keypair.
