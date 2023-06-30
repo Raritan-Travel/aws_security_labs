@@ -6,10 +6,8 @@ This is for brand new analysts to AWS. This will provide a basic overview of wha
 
 ## Pre-Reqs
 - Create a public key to authenticate to the ec2 instances - name the key `mayas-keypair`. Save the keypair.
-- Create a security group that allows access to the bastion host. Name the security group: `bastion host sg`
-  - Create a rule that allows ssh from `My-IP` 
 - Create a security group that allows access to the public server. Name the security group: `web server sg`
-  - Create a rule that only allows ssh access from the `bastion host sg`
+  - Create a rule that only allows ssh access from the `my-ip`
   - Create a rule that allows http/https from everywhere
 - Click the CloudFormation template below to provision the infrastructure required.
 
