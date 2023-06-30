@@ -4,13 +4,6 @@
 - keypair type = RSA
 - key file format = .pem
 
-#### create a security group for the bastion host: 
-- vpc  =  week 00 vpc 
-- name = `bastion host sg` 
-- create an inbound rule 
-  - type = ssh
-  - source = my ip 
-
 #### create a security group for the webserver 
 - vpc = week 00 vpc
 - name = `webserver sg` 
